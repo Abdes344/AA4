@@ -33,7 +33,7 @@ Execució de l'ordre d'instal·lació des del terminal.
 sudo nano /var/www/html/index.html
 ```
 
-![Edició de l’index.html](/AA4/2.png)
+![Edició de l’index.html](/IMG/2.png)
 
 Contingut HTML personalitzat amb el nom `Abdeslam Khfif`.
 
@@ -41,7 +41,7 @@ Contingut HTML personalitzat amb el nom `Abdeslam Khfif`.
 
 Obrim navegador a `http://localhost`.
 
-![Pàgina web local al Zorin](/AA4/3.png)
+![Pàgina web local al Zorin](/IMG/3.png)
 
 Es veu el missatge "Activitat DNAT + VPN" i el nom de l'alumne.
 
@@ -53,11 +53,11 @@ Accedim a la interfície web de l’IPFire: `https://192.168.13.254:444`.
 
 Creem una regla DNAT per al port 80 (HTTP) a **Firewall > Regles del tallafocs**.
 
-![Configuració DNAT - part 1](/AA4/4.png)
+![Configuració DNAT - part 1](/IMG/4.png)
 
 Origen "Qualsevol", NAT de destinació, destinació `192.168.13.2`.
 
-![Configuració DNAT - part 2 (protocol i port)](/AA4/5.png)
+![Configuració DNAT - part 2 (protocol i port)](/IMG/5.png)
 
 Protocol TCP, port de destinació 80, port extern buit.
 
@@ -69,7 +69,7 @@ Després de guardar, hem de prémer **Aplicar els canvis**.
 
 Des del client (en xarxa NAT) obrim el navegador i anem a la IP pública de l’IPFire.
 
-![Accés web des del client](/AA4/6.png)
+![Accés web des del client](/IMG/6.png)
 
 Es veu la mateixa pàgina web del Zorin, cosa que confirma que el DNAT funciona.
 
@@ -83,7 +83,7 @@ A **IPFire > Serveis > OpenVPN** > **Autoritats certificadores** > **Generar cer
 
 En intentar generar un certificat d'usuari pot sortir un error si el nom no és vàlid.
 
-![Error en generar certificat](/AA4/7.png)
+![Error en generar certificat](/IMG/7.png)
 
 Missatge "Entrada no válida para el nombre completo del usuario".
 
@@ -97,7 +97,7 @@ Anem a **Control i estat de connexió** > **Afegeix**. Triem **Host-to-Net (Road
 
 A la llista de connexions veurem l’estat:
 
-![Llista de connexions OpenVPN](/AA4/8.png)
+![Llista de connexions OpenVPN](/IMG/8.png)
 
 La connexió `Serveis13` apareix com a DESCONECTADA (encara no està activa).
 
@@ -117,7 +117,7 @@ Fem clic a la icona de descàrrega (zip) per obtenir el perfil `.ovpn` i el cert
 
 Afegim una entrada per resoldre el nom `ipfire.firewall13.foodlogistic` amb la IP pública de l’IPFire.
 
-![Fitxer /etc/hosts](/AA4/9.png)
+![Fitxer /etc/hosts](/IMG/9.png)
 
 Línia `192.168.13.254    ipfire.firewall13.foodlogistic` afegida al final.
 
@@ -127,7 +127,7 @@ Línia `192.168.13.254    ipfire.firewall13.foodlogistic` afegida al final.
 sudo apt install openvpn network-manager-openvpn network-manager-openvpn-gnome
 ```
 
-![Instal·lació de paquets OpenVPN](/AA4/10.png)
+![Instal·lació de paquets OpenVPN](/IMG/10.png)
 
 Terminal mostrant la instal·lació dels tres paquets.
 
@@ -135,7 +135,7 @@ Terminal mostrant la instal·lació dels tres paquets.
 
 Descarreguem el zip des de l’IPFire (a la carpeta Downloads).
 
-![Carpeta de descàrregues](/AA4/11.png)
+![Carpeta de descàrregues](/IMG/11.png)
 
 Visualització de la carpeta `Downloads` on es troba el fitxer zip.
 
@@ -152,7 +152,7 @@ Omplim:
 - Certificats: apuntem al mateix fitxer `.p12` per als tres camps
 - Contrasenya: la del PKCS12
 
-![Configuració VPN al Network Manager](/AA4/12.png)
+![Configuració VPN al Network Manager](/IMG/12.png)
 
 *Descripció:* Formulari d'importació de la VPN amb els camps omplerts.
 
@@ -160,7 +160,7 @@ Omplim:
 
 Al menú de xarxa (dreta superior), seleccionem la VPN i connectem.
 
-![Menú de xarxa amb VPN connectada](/AA4/13.png)
+![Menú de xarxa amb VPN connectada](/IMG/13.png)
 
 Opció "Serveis13 VPN" disponible i connectada.
 
@@ -168,7 +168,7 @@ Opció "Serveis13 VPN" disponible i connectada.
 
 Fem `ping google.com` per veure que la VPN no bloqueja la sortida.
 
-![Prova de ping a Google](/AA4/14.png)
+![Prova de ping a Google](/IMG/14.png)
 
 Resposta correcta dels paquets, 0% de pèrdua.
 
