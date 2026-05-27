@@ -23,7 +23,7 @@
 sudo apt update && sudo apt install openssh-server apache2 -y
 ```
 
-![Instal·lació de SSH i Apache2](/AA4/1.png)
+![Instal·lació de SSH i Apache2](/IMG/1.png)
 
 Execució de l'ordre d'instal·lació des del terminal.
 
